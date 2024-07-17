@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Storage</title>
+</head>
+<body>
+
+<script>
+    document.cookie = 'name=Ada Lovelace; expires=Fri, 23 Nov 2024 12:00:00 UTC; path=/';
+    document.cookie = 'language=English; expires=Fri, 23 Nov 2024 12:00:00 UTC; path=/';
+    document.cookie = 'language=Igbo; expires=Fri, 23 Nov 2024 12:00:00 UTC; path=/';
+
+    let cookies = document.cookie.split('; ');
+    console.log(cookies);
+
+    //nameCookie = document.cookie.split(';')[0]
+    let nameCookie = cookies.find((cookie) => cookie.startsWith('language'));
+    console.log(nameCookie.split('=')[1]);
+
+    //localStorage.setItem('name', 'Jamiu');
+    //localStorage.setItem('names', 'Lanre');
+
+    const allUsernames = [
+        'ada_lovelace',
+        'grace_hopper',
+        'alan_turing',
+    ]
+
+    localStorage.setItem('usernames', allUsernames);
+
+
+    console.log(localStorage.getItem('usernames').split(',')[2]);
+
+    //object
+    const user = {
+        name: {
+            first: "Jamiu",
+            last: "Lanre"
+        },
+        age: 20,
+        gender: "Male",
+        height: 10
+    }
+
+    const response = {
+        day: 1
+    }
+
+    const days = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+    ];
+
+    days[response.day]
+
+    localStorage.clear();
+    let userJsonString = localStorage.getItem('user');
+    console.log(JSON.parse(userJsonString));
+
+    //localStorage.setItem('user', JSON.stringify(user))
+
+    console.log(user.name.last);
+
+
+    /* var nameCookie = document.cookie.split(';')[0];
+    var languageCookie = document.cookie.split(';')[1];
+    console.log(nameCookie.split('=')[1]);
+     */
+</script>    
+</body>
+</html>

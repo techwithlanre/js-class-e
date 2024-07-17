@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Events</title>
+</head>
+<body>
+    
+    
+    <!-- <button id="button2">Click Me! 2</button> -->
+
+    <form action="" id="name-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <input type="reset" value="Submit">
+    </form>
+    
+    <script>
+        const form = document.querySelector('#name-form')
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            window.location = 'https://google.com'
+        })
+    </script>
+</body>
+</html>

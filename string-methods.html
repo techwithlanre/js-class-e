@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+<body>
+    <script>
+        let message = "Hello World!";
+        let message3 = "Hello World Tunde";
+
+
+        /* 
+        
+        toUpperCase(); 
+        Converts text to uppercase
+
+        */
+        //console.log(message.toUpperCase());
+        //console.log(message.toUpperCase());
+
+        /* 
+        
+        toLowerCase(); 
+        Converts text to lowercase
+
+        */
+        //console.log(message.toLowerCase());
+        //console.log(message.toLowerCase());
+
+        let message5 = "Hello World!";
+        console.log(message5.slice(-1, -5));
+
+        const myArr = [[1,2],[3,4],[5,6]];
+        const newArr = myArr.flat();
+        console.log(newArr);
+
+
+
+
+
+
+
+
+
+
+
+
+        //let message2 = " Welcome to this JavaScript Class ";
+
+        // console.log(message2.trim().length);
+        // console.log(message2.trimStart().length);
+        // console.log(message2.trimEnd().length);
+
+        //charAt()
+
+        let lastIndex = message3.length - 1;
+        console.log(message3.charAt(lastIndex));
+
+        console.log(message3.at(5));
+
+        let message4 = "You are welcome";
+
+        console.log(message4.slice(-10, -2));
+        console.log(message4.substring(5, 10));
+        console.log(message4.substr(-7));
+
+        let text = "Apple, Banana, Kiwi";
+        let part = text.slice(7, 13); 
+        
+        //console.log(part);
+
+        let text1 = "Hello";
+        let text2 = "World";
+        let text3 = text1.concat("|", text2);
+
+        console.log(text3);
+
+    </script>
+</body>
+</html>

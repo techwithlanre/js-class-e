@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="myDiv" id="myDivId">My New Div</div>
+    <div class="myDiv" id="myDivId2">My New Div</div>
+    <div class="myDiv" id="myDivId3" style="font-size: 3em;">My New Div</div>
+    
+    <script>
+        let newP = document.createElement('p');
+        newP.textContent = "My New Paragraph";
+        //const div = document.querySelector('#myDivId').innerHTML += "<p>The DOM is awesome!</p> <button>Click me!</button>";
+        const div = document.querySelector('#myDivId').appendChild(newP);
+        console.log(div);
+        //const div2 = document.querySelector('.myDiv').id = 'myNewId';
+        //const div23 = document.querySelector('#myDivId2').setAttribute('id', 'myNewId');
+        document.querySelectorAll('.myDiv')[0].style.backgroundColor = "red";
+        document.querySelectorAll('.myDiv')[1].style.backgroundColor = "red";
+        //document.querySelectorAll('.myDiv')[2].style.fontSize = "30px";
+        //console.log(document.querySelector('#myDivId3').style.fontSize);
+        //console.log(document.body.innerHTML);
+        
+    </script>
+</body>
+</html>

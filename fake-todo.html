@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+<title>Todo App</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <form id="addTaskForm" onsubmit="addTask()">
+        <input type="text" id="taskInput" required />
+        <button type="submit" >Add Task</button>
+    </form>
+    <ul id="taskList">
+
+    </ul>
+<script>
+    const addTaskForm = document.querySelector('#addTaskForm')
+    const taskInput = document.querySelector('#taskInput')
+    const taskList = document.querySelector('#taskList')
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || []
+
+    taskList.style = `
+    list-style: none;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    `
+
+    const var1 = "Jamiu";
+    const var2 = "Favour";
+
+
+    const createTaskItem = (task) => `
+    <li>
+        <input type="checkbox" name="task" value="${task}" />
+        <label for="task">${task}</label>
+        <button type="button">X</button>
+    </li>
+    `;
+
+    const renderTasks = () => {
+        storedTasks.forEach((task) => {
+            taskList.insertAdjacentHTML('beforeend', createTaskItem(task))
+        })
+    }
+
+    window.onload = renderTasks
+
+    const addTask = (e) => {
+        const task = taskInput.value
+        const taskItem = createTaskItem(task)
+        taskList.insertAdjacentHTML('beforeend', taskItem)
+        storedTasks.push(task)
+        localStorage.setItem(
+            'tasks',
+            JSON.stringify(storedTasks)
+        )
+        addTaskForm.reset()
+    }
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //ternary operator
+
+        var result = ""
+        if(var1 == "Jamiu") {
+            result = var1;
+        } else {
+            result  = 'not jamiu'
+        }
+
+        //result = var1 == "jamiu" ? var1 : 'not jamiu'
+</script>
+</body>
+</html>

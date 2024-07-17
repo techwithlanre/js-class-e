@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="assets/todo.css">
+    <script src="https://kit.fontawesome.com/3acc343030.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-Do List</h2>
+            <div class="roll">
+                <input type="text" id="input-box" placeholder="Add your text">
+                <button onclick="addTask()">Add</button>
+                <!-- <button onclick="fetchTasks()">Fetch</button> -->
+            </div>
+            <ul id="list-container">
+                <li class="checked">
+                    <i class="fa-regular fa-circle"></i>Task 1 <i class="fa-regular fa-circle-check"></i>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <script>
+
+
+        let taskList = document.getElementById('list-container');
+        function fetchTasks() {
+            fetch('https://6697929102f3150fb66e2c01.mockapi.io/todos')
+                .then(response => response.json()).then(json => {
+                    console.log(json);
+                    taskList.appendChild("li")
+                })
+        }
+
+        fetchTasks();
+
+    </script>
+</body>
+
+</html>

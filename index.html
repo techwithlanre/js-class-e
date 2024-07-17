@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How do we write JS</title>
+</head>
+<body>
+
+    <form action="">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="number" name="" id="inputOne" required>
+                    </td>
+                    <td>
+                        <select type="number" name="" id="operator" required>
+                            <option>+</option>
+                            <option>-</option>
+                            <option>/</option>
+                            <option>*</option>
+                            <option>%</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" name="" id="inputTwo" required>
+                    </td>
+                    <td>
+                        <input type="button" name="" id="calculate" value="Calculate">
+                    </td>
+                </tr>
+            </table>
+            <h2 id="resultElement"></h2>
+            <p id="errorMessage" style="color: red"></p>
+        </div>
+    </form>
+    
+    <script>  
+        const inputOne = document.getElementById('inputOne');
+        let inputTwo = document.getElementById('inputTwo');
+        let operator = document.getElementById('operator');
+        let calucateButton = document.getElementById('calculate');
+        //let resultElement = document.getElementById('resultElement');
+
+
+        calucateButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            if(inputOne.value.length > 0 && inputTwo.value.length > 0) {
+                if(operator.value == "+") {
+                    document.getElementById('resultElement').innerHTML = add(inputOne.value, inputTwo.value);
+                }
+
+                if (operator.value == '-') {
+                    document.getElementById('resultElement').innerHTML = subtract(inputOne.value, inputTwo.value);
+                }
+
+                if (operator.value == '*') {
+                    document.getElementById('resultElement').innerHTML = parseFloat(inputOne.value) * parseFloat(inputTwo.value);
+                }
+
+                if (operator.value == '/') {
+                    document.getElementById('resultElement').innerHTML = parseFloat(inputOne.value) / parseFloat(inputTwo.value);
+                }
+
+                if (operator.value == '%') {
+                    document.getElementById('resultElement').innerHTML = parseFloat(inputOne.value) % parseFloat(inputTwo.value);
+                }
+            } else {
+                document.getElementById('errorMessage').innerHTML = "All fields are required";
+            }            
+        });
+
+
+
+        //named function
+        function pluralize(number, word) {
+            if (number > 1) {
+                return word + "s";
+            }
+
+            return word;
+        }
+
+
+        function add(num1, num2) {
+            return parseFloat(num1) + parseFloat(num2);
+        }
+
+        function subtract(num1, num2) {
+            return parseFloat(num1) - parseFloat(num2);
+        }
+
+        console.log(pluralize(2, "Orange"));
+        console.log(pluralize(2, "Apple"));
+        console.log(pluralize(2, "Banana"));
+
+        //anonymous function
+        (function () {
+            return alert("I'm a function, and I'm anonymous!")
+        })
+
+
+        //named 
+        function runAnotherFn(param1) { 
+            
+        }
+
+        //anonymous
+        (function() {
+
+        })
+
+        (() => {
+
+        })
+
+        runAnotherFn(() => { 
+
+        });
+
+
+        //function expression
+        const processPayout = () =>  {
+            return 'testing arrow';
+        }
+
+        const alertUser = function () {
+            return 'testing anon';
+        }
+
+
+        console.log(processPayout);
+        console.log(alertUser);
+
+
+        //named function
+        //anonymous
+        //Immediately Invoked Function Expression (IIFE)
+        //Arrow Function
+        //Function Expression
+
+        //Callback Function 
+        //Higher Order Functions (HOF)
+
+        //Task A  // do something
+
+        //Task B // IIFE
+
+
+
+    </script>
+</body>
+</html>
